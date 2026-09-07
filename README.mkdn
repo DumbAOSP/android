@@ -1,36 +1,31 @@
-LineageOS
-===========
+DumbOS
+======
 
-Getting started
----------------
-
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
+A custom rom based on lineage with intention of making you smartphone a Dumb_Phone.
+Except, there's catch,
+It will have all the essential features of a smartphone that are necessary for our day to day life, and the minimilization of Feature Phone aka Dumb Phone in order to save ourself from the excessive amount of screen time.
 
 To initialize your local repository using the LineageOS trees, use a command like this:
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
+repo init -u https://github.com/DumbAOSP/android.git -b lineage-23.2 --git-lfs
 ```
 Then to sync up:
 ```
-repo sync
+repo sync -j8
 ```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
-
-
-Submitting patches
-------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
-
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
-
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
-
-
-Buildbot
---------
-
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
-
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+Go to the root folder and setup your build environment:
+```
+source build/envsetup.sh
+```
+The rest of this guide will rely on this being done. You can check the proper execution of the commands by typing:
+```
+croot
+```
+Prepare device-specific code:
+```
+breakfast <device_codename>
+```
+Time to start building! Now, type:
+```
+brunch <device_codename>
+```
